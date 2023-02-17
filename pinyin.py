@@ -13,4 +13,9 @@ class pinyin(object):
         s = self.character_dict.loc[self.character_dict.ch == character, 'py'].values
         if len(s) == 0:
             return ''
-        return s[0]
+        return s
+
+
+
+
+

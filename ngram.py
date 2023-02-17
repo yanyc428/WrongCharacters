@@ -10,20 +10,21 @@ class nGram(object):
         self.length = 0
         self.seg_text = []
         self.segment = ['，', '。', '？', '！', '：', '；', '……', '【', '】', '（', '）', '“', '”', "《", '》', '、']
-        self.stop = []
 
     def seg(self, text):
+        stop = []
         self.text = text
         c = self.lac.run(self.text)
         l = []
         for index, tag in enumerate(c[1]):
             if tag in self.tags:
-                self.stop.append(c[0][index])
+                stop.append(c[0][index])
                 l.append(tag)
             else:
                 l += list(c[0][index])
         self.seg_text = l
         self.length = len(l)
+        return stop
 
     def ngram(self, text, n=3):
         assert isinstance(text, str)
@@ -52,8 +53,6 @@ class nGram(object):
 
 if __name__ == '__main__':
     ng = nGram()
-    s = "程子佳去北师大的“乐育超市”买【小米鸡排】，小米鸡排、汉堡包真的很好吃"
+    s = "另据报到，24日晚，刚刚下台的钱总理斯捷帕申决定与“亚博卢”集团节盟，参加12月的杜马竟选。但斯捷帕申表示，他不加入“亚博卢”及团。"
     for item in ng.ngram(s):
-        s = "程子佳去北师大的“超市”买【小米鸡排】，小米鸡排、汉堡包真的很好吃"
         print(item)
-

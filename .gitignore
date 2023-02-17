@@ -2,3 +2,5 @@
 raw_data
 ngram
 3gram.csv
+__pycache__ 
+.vscode
