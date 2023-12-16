@@ -30,4 +30,4 @@
 
 
 ## Contact
-欢迎联系，了解更多细节。Email: yanyuchen@mail.bnu.edu.cn
+欢迎联系，了解更多细节。Email: yanyuchen@zju.edu.cn
